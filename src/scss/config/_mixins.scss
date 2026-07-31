@@ -20,23 +20,3 @@
     @content;
   }
 }
-
-//centrer flexbox
-@mixin flex-center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-//espace entre les éléments flexbox
-@mixin flex-between {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-//flexbox colonne
-@mixin flex-column {
-  display: flex;
-  flex-direction: column;
-}

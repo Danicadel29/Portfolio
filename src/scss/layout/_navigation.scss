@@ -1,4 +1,23 @@
-.nav {
+@use "../config/variables" as *;
+
+.navigation {
+  height: 128px;
+  width: 100%;
   display: flex;
+  flex-direction: row;
   align-items: center;
+  gap: $spacing-8xl;
+  border-bottom: 2px solid rgba($color-border, 0.4);
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    gap: $spacing-6xl;
+  }
+
+  &__item {
+    color: $color-primary;
+    font-family: $font-secondary;
+    font-size: $font-size-5xl;
+  }
 }

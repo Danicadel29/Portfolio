@@ -1,5 +1,15 @@
 @use "../config/variables" as v;
 
+@font-face {
+  font-family: "Arista";
+  src: url("../../assets/fonts/Arista2.0Alternate.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Brisound";
+  src: url("../../assets/fonts/BrisoundRegular-vnl89.otf") format("opentype");
+}
+
 // Titres
 
 h1 {

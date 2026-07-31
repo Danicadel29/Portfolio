@@ -12,10 +12,6 @@
   background-color: rgb(0 0 0 / 60%);
 }
 
-.modal--open {
-  @include m.flex-center;
-}
-
 .modal__content {
   position: relative;
 
