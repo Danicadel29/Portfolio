@@ -1,0 +1,44 @@
+@use "../config/variables" as v;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-lg;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  gap: v.$spacing-sm;
+}
+
+.form__label {
+  font-weight: v.$font-weight-medium;
+}
+
+.form__input,
+.form__textarea,
+.form__select {
+  width: 100%;
+  padding: v.$spacing-base;
+
+  color: v.$color-text;
+  background-color: v.$color-white;
+
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-md;
+
+  transition: v.$transition-fast;
+}
+
+.form__input:focus,
+.form__textarea:focus,
+.form__select:focus {
+  outline: none;
+  border-color: v.$color-primary;
+}
+
+.form__textarea {
+  min-height: 10rem;
+  resize: vertical;
+}

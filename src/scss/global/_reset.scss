@@ -1,0 +1,49 @@
+//suppression marge par défaut
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Défilement fluide
+html {
+  scroll-behavior: smooth;
+}
+
+//base
+html,
+body {
+    min-height: 100%;
+}
+
+// Les champs de formulaire
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+// Boutons sans style navigateur
+button {
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+// Liens sans soulignement par défaut
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+// Listes sans puces
+ul,
+ol {
+  list-style: none;
+}
+
+// Évite que les images soient sélectionnées
+img {
+  user-select: none;
+}

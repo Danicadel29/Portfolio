@@ -1,0 +1,28 @@
+@use "../config/variables" as v;
+
+//body
+
+body {
+  font-family: v.$font-primary;
+  font-size: v.$font-size-base;
+  font-weight: v.$font-weight-normal;
+  color: v.$color-text;
+  background-color: v.$color-background;
+}
+
+//titres
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: v.$font-primary;
+  font-weight: v.$font-weight-bold;
+  color: v.$color-text;
+}
+
+//paragraphes
+
+p {
+  font-family: v.$font-primary;
+  font-size: v.$font-size-base;
+  font-weight: v.$font-weight-normal;
+  color: v.$color-text;
+}

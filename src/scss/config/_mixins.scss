@@ -1,0 +1,42 @@
+@use "variables" as v;
+
+//media query mobile
+@mixin mobile {
+  @media (max-width: v.$breakpoint-mobile) {
+    @content;
+  }
+}
+
+//media query tablette
+@mixin tablet {
+  @media (max-width: v.$breakpoint-tablet) {
+    @content;
+  }
+}
+
+//media query desktop
+@mixin desktop {
+  @media (min-width: v.$breakpoint-desktop) {
+    @content;
+  }
+}
+
+//centrer flexbox
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+//espace entre les éléments flexbox
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+//flexbox colonne
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}

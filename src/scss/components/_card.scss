@@ -1,0 +1,10 @@
+@use "../config/variables" as v;
+
+.card {
+  padding: v.$spacing-xl;
+
+  background-color: v.$color-white;
+  border: 1px solid v.$color-border;
+  border-radius: v.$radius-lg;
+  box-shadow: v.$shadow-sm;
+}

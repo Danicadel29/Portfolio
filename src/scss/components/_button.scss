@@ -1,0 +1,40 @@
+@use "../config/variables" as v;
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: v.$spacing-sm;
+
+  padding: v.$spacing-base v.$spacing-xl;
+
+  font-family: v.$font-primary;
+  font-size: v.$font-size-base;
+  font-weight: v.$font-weight-medium;
+
+  border: 1px solid transparent;
+  border-radius: v.$radius-lg;
+
+  cursor: pointer;
+  transition: v.$transition-base;
+}
+
+.button--primary {
+  color: v.$color-text-inverse;
+  background-color: v.$color-primary;
+}
+
+.button--primary:hover {
+  opacity: 0.85;
+}
+
+.button--secondary {
+  color: v.$color-primary;
+  background-color: transparent;
+  border-color: v.$color-primary;
+}
+
+.button--secondary:hover {
+  color: v.$color-text-inverse;
+  background-color: v.$color-primary;
+}

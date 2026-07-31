@@ -1,0 +1,12 @@
+@use "../config/variables" as v;
+
+// Conteneur principal du site
+
+.container {
+  width: min(
+    100% - (v.$container-padding * 2),
+    v.$container-width
+  );
+
+  margin-inline: auto;
+}

@@ -1,0 +1,28 @@
+@use "../config/variables" as v;
+@use "../config/mixins" as m;
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+
+  display: none;
+
+  padding: v.$spacing-lg;
+  background-color: rgb(0 0 0 / 60%);
+}
+
+.modal--open {
+  @include m.flex-center;
+}
+
+.modal__content {
+  position: relative;
+
+  width: min(100%, 40rem);
+  padding: v.$spacing-xl;
+
+  background-color: v.$color-white;
+  border-radius: v.$radius-lg;
+  box-shadow: v.$shadow-lg;
+}
