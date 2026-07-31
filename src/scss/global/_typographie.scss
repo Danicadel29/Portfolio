@@ -1,4 +1,4 @@
-@use "../config/variables" as v;
+@use "../config/variables" as *;
 
 @font-face {
   font-family: "Arista";
@@ -13,37 +13,41 @@
 // Titres
 
 h1 {
-  font-size: v.$font-size-5xl;
+  font-size: $font-size-10xl;
+  font-family: $font-secondary;
+  color: $color-primary;
 }
 
 h2 {
-  font-size: v.$font-size-4xl;
+  font-size: $font-size-9xl;
+  font-family: $font-primary;
+  color: $color-secondary;
 }
 
 h3 {
-  font-size: v.$font-size-3xl;
+  font-size: $font-size-3xl;
 }
 
 h4 {
-  font-size: v.$font-size-2xl;
+  font-size: $font-size-2xl;
 }
 
 h5 {
-  font-size: v.$font-size-xl;
+  font-size: $font-size-xl;
 }
 
 h6 {
-  font-size: v.$font-size-lg;
+  font-size: $font-size-lg;
 }
 
 // Paragraphes
 
 p {
-  font-size: v.$font-size-base;
+  font-size: $font-size-base;
 }
 
 // Petit texte
 
 small {
-  font-size: v.$font-size-sm;
+  font-size: $font-size-sm;
 }

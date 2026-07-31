@@ -1,5 +1,9 @@
 @use "../config/variables" as *;
 
+.header{
+  border-bottom: 2px solid rgba($color-border, 0.4);
+}
+
 .navigation {
   height: 128px;
   width: 100%;
@@ -7,7 +11,7 @@
   flex-direction: row;
   align-items: center;
   gap: $spacing-8xl;
-  border-bottom: 2px solid rgba($color-border, 0.4);
+  padding: $spacing-2xl;
 
   &__list {
     display: flex;
