@@ -1,12 +1,49 @@
-@use "../config/variables" as v;
+@use "../config/variables" as *;
 
-// Conteneur principal du site
+.about {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  align-items: center;
 
-.container {
-  width: min(
-    100% - (v.$container-padding * 2),
-    v.$container-width
-  );
+  &__images {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+    rotate: -8deg;
+    margin-top: $spacing-2xl;
+  }
 
-  margin-inline: auto;
+  &__image {
+    display: block;
+    width: 14rem;
+    height: 14rem;
+    object-fit: cover;
+    border-radius: $radius-2xl;
+  }
+
+  &__content {
+    max-width: 48rem;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-family: $font-primary;
+    font-weight: $font-weight-light;
+    font-size: $font-size-9xl;
+    color: $color-secondary;
+    margin-bottom: $spacing-xl;
+  }
+
+  &__paragraphe {
+    font-family: $font-secondary;
+    font-size: $font-size-lg;
+    line-height: 1.4;
+    max-width: 36rem;
+  }
+
+  &__paragraphe--second {
+    margin-left: auto;
+    margin-top: 1.5rem;
+    max-width: 27rem;
+  }
 }
