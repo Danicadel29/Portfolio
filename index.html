@@ -39,9 +39,13 @@
 
     </header>
 
+
     <main>
 
       <section class="hero">
+
+        <div class="hero__glass hero__glass--one"></div>
+        <div class="hero__glass hero__glass--two"></div>
 
         <div class="hero__content">
 
@@ -56,6 +60,7 @@
         </div>
 
       </section>
+
 
       <span><img class="bande-deco" src="/src/assets/images/Bande-motif-orange.svg" alt=""></span>
 
@@ -80,23 +85,69 @@
 
       </section>
 
-      <section id="contact">
-
-        <div class="container">
-          <h2>Contact</h2>
-        </div>
-
-      </section>
     </main>
+
 
     <footer class="footer">
 
-      <div class="container">
-        <p>© 2026 Nom du projet</p>
+      <div class="footer__content">
+
+        <nav class="footer__navigation" aria-label="Navigation secondaire">
+          <ul class="footer__list">
+            <li>
+              <a class="footer__link" href="#accueil">Accueil</a>
+            </li>
+            <li>
+              <a class="footer__link" href="#projets">Mes projets</a>
+            </li>
+            <li>
+              <a class="footer__link" href="#credits">Crédits</a>
+            </li>
+          </ul>
+        </nav>
+
+        <p class="footer__name">Delfosse</p>
+
+        <div class="footer__contact">
+          <a href="mailto:delfossedanica@gmail.com">
+            delfossedanica@gmail.com
+          </a>
+
+          <p>Danica Delfosse</p>
+
+          <a href="tel:+32473184289">
+            0473 18 42 89
+          </a>
+        </div>
+
       </div>
+
+      <p class="footer__copy">© 2026 Portfolio Danica delfosse</p>
 
     </footer>
 
     <script type="module" src="/src/js/main.js"></script>
+    
+    <svg width="0" height="0" aria-hidden="true">
+  <defs>
+    <filter id="glass-distortion">
+      <feTurbulence
+        type="fractalNoise"
+        baseFrequency="0.008"
+        numOctaves="2"
+        seed="3"
+        result="noise"
+      />
+
+      <feDisplacementMap
+        in="SourceGraphic"
+        in2="noise"
+        scale="30"
+        xChannelSelector="R"
+        yChannelSelector="G"
+      />
+    </filter>
+  </defs>
+</svg>
   </body>
 </html>

@@ -1,3 +1,78 @@
+@use "../config/variables" as *;
+
 .footer {
-  position: relative;
+    background-image: url("/src/assets/images/footer.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    border-radius: $radius-2xl $radius-2xl 0 0;
+
+    margin-top: $spacing-2xl;
+    overflow: hidden;
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    margin: $spacing-xl;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+
+    position: relative;
+    z-index: 2;
+  }
+
+  &__link {
+    font-family: $font-secondary;
+    color: $color-primary;
+    font-size: $font-size-lg;
+  }
+
+  &__name {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-family: $font-secondary;
+    font-size: $font-size-10xl;
+    color: rgba($color-white, 0.3);
+
+    margin: 0;
+    z-index: 1;
+  }
+
+  &__contact {
+    position: relative;
+    z-index: 2;
+
+    text-align: right;
+
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-sm;
+
+    a,
+    p {
+      margin: 0;
+      color: $color-primary;
+      font-family: $font-secondary;
+      font-size: $font-size-lg;
+    }
+  }
+
+    &__copy{
+    text-align: center;
+    font-family: $font-secondary;
+    font-size: $font-size-sm;
+    position: relative;
+    z-index: 1;
+  }
 }

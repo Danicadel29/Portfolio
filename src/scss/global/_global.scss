@@ -1,22 +1,23 @@
-@use "../config/variables" as v;
+@use "../config/variables" as *;
 
 //body
 
 body {
-  font-family: v.$font-primary;
-  font-size: v.$font-size-base;
-  font-weight: v.$font-weight-normal;
-  color: v.$color-text;
-  background-color: v.$color-background;
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  color: $color-text;
+  background-color: $color-background;
+  margin: 0%;
 }
 
 //paragraphes
 
 p {
-  font-family: v.$font-primary;
-  font-size: v.$font-size-base;
-  font-weight: v.$font-weight-normal;
-  color: v.$color-text;
+  font-family: $font-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-normal;
+  color: $color-text;
 }
 
 .bande-deco {
