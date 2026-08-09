@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: 30% 1fr;
   align-items: center;
+  margin-bottom: $spacing-2xl;
 
   &__images {
     display: flex;
