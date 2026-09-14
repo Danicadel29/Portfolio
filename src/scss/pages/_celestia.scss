@@ -1,0 +1,50 @@
+@use "../config/variables" as *;
+
+.celestia {
+    position: relative;
+    overflow: hidden;
+    padding-top: $spacing-5xl;
+
+    .celestia__title {
+        font-family: $font-primary;
+        font-size: $font-size-10xl;
+        color: $color-secondary;
+
+        margin-bottom: $spacing-3xl;
+        margin-left: $spacing-6xl;
+    }
+
+    .celestia__content {
+        width: 37rem;
+        margin: 0 auto;
+
+        .celestia__soustitle {
+            font-family: $font-primary;
+            font-size: $font-size-6xl;
+            color: $color-secondary;
+
+            margin: 0 0 $spacing-lg;
+        }
+
+        .celestia__paragraphe {
+            font-family: $font-secondary;
+            font-size: $font-size-2xl;
+            color: $color-text;
+
+            margin: 0;
+        }
+    }
+
+    .celestia__image {
+        width: 50%;
+        margin-left: auto;
+        // margin-top: -100px;
+        margin-bottom: $spacing-3xl;
+
+        .celestia__image--titanic {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+}

@@ -1,0 +1,50 @@
+@use "../config/variables" as *;
+
+.dataplays {
+    position: relative;
+    overflow: hidden;
+    padding-top: $spacing-5xl;
+
+    .dataplays__title {
+        font-family: $font-primary;
+        font-size: $font-size-10xl;
+        color: $color-primary;
+
+        text-align: center;
+        margin: 0 0 $spacing-3xl;
+    }
+
+    .dataplays__content {
+        width: 37rem;
+        margin: 0 auto;
+
+        .dataplays__soustitle {
+            font-family: $font-primary;
+            font-size: $font-size-6xl;
+            color: $color-primary;
+
+            margin: 0 0 $spacing-lg;
+        }
+
+        .dataplays__paragraphe {
+            font-family: $font-secondary;
+            font-size: $font-size-2xl;
+            color: $color-text;
+
+            margin: 0;
+        }
+    }
+
+    .dataplays__image {
+        width: 70%;
+        margin-left: auto;
+        margin-top: -100px;
+        margin-bottom: $spacing-3xl;
+
+        .dataplays__image--titanic {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+}
