@@ -5,6 +5,46 @@
     overflow: hidden;
     padding-top: $spacing-5xl;
 
+        &__glass {
+        position: absolute;
+        z-index: 5;
+
+        filter: url("#glass-distortion");
+
+        background: rgba(255, 255, 255, 0.08);
+
+        backdrop-filter: blur(3px);
+        -webkit-backdrop-filter: blur(3px);
+
+        pointer-events: none;
+    }
+
+
+    &__glass--one {
+        width: 30rem;
+        height: 30rem;
+
+        top: 65rem;
+        right: -8rem;
+
+        border-radius: 58% 42% 65% 35% / 45% 60% 40% 55%;
+
+        transform: rotate(-25deg);
+    }
+
+
+    &__glass--two {
+        width: 25rem;
+        height: 25rem;
+
+        top: 0rem;
+        left: 10rem;
+
+        border-radius: 40% 60% 45% 55% / 55% 40% 60% 45%;
+
+        transform: rotate(20deg);
+    }
+
     .dataplays__title {
         font-family: $font-primary;
         font-size: $font-size-10xl;
@@ -32,6 +72,7 @@
             color: $color-text;
 
             margin: 0;
+            margin-bottom: $spacing-lg;
         }
     }
 

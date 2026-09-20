@@ -1,6 +1,6 @@
 @use "../config/variables" as *;
 
-.celestia {
+.souffle {
     position: relative;
     overflow: hidden;
     padding-top: $spacing-5xl;
@@ -24,8 +24,8 @@
         width: 30rem;
         height: 30rem;
 
-        top: 65rem;
-        right: -15rem;
+        top: 45rem;
+        right: -5rem;
 
         border-radius: 58% 42% 65% 35% / 45% 60% 40% 55%;
 
@@ -34,18 +34,18 @@
 
 
     &__glass--two {
-        width: 25rem;
-        height: 25rem;
+        width: 30rem;
+        height: 30rem;
 
-        top: 0rem;
-        left: 10rem;
+        top: 30rem;
+        left: -5rem;
 
         border-radius: 40% 60% 45% 55% / 55% 40% 60% 45%;
 
         transform: rotate(20deg);
     }
 
-    .celestia__title {
+    .souffle__title {
         font-family: $font-primary;
         font-size: $font-size-10xl;
         color: $color-secondary;
@@ -54,13 +54,13 @@
         margin-left: $spacing-6xl;
     }
 
-    .celestia__content {
+    .souffle__content {
         margin-left: $spacing-6xl;
         display: flex;
         flex-direction: row;
         margin-bottom: $spacing-6xl;
 
-        .celestia__soustitle {
+        .souffle__soustitle {
             font-family: $font-primary;
             font-size: $font-size-6xl;
             color: $color-secondary;
@@ -68,7 +68,7 @@
             margin: 0 0 $spacing-lg;
         }
 
-        .celestia__paragraphe {
+        .souffle__paragraphe {
             font-family: $font-secondary;
             font-size: $font-size-2xl;
             color: $color-text;
@@ -78,12 +78,12 @@
         }
     }
 
-    .celestia__image {
-        width: 150%;
+    .souffle__image {
+        width: 200%;
         margin-right: $spacing-4xl;
         margin-top: -22rem;
 
-        .celestia__image--celestia {
+        .souffle__image--souffle {
             display: block;
             width: 100%;
             height: auto;

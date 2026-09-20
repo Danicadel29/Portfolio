@@ -8,33 +8,36 @@ gsap.registerPlugin(ScrollTrigger);
 
 // Animation des formes glass
 
-const glassShapes = document.querySelectorAll(".hero__glass");
+const glassSections = document.querySelectorAll(".hero, .dataplays, .celestia, .souffle , .see");
 
-function animateGlass(shape) {
-  return gsap.to(shape, {
-    x: gsap.utils.random(-450, 450),
-    y: gsap.utils.random(-250, 250),
-    rotation: gsap.utils.random(-60, 60),
+glassSections.forEach((section) => {
 
-    duration: gsap.utils.random(8, 14),
-    ease: "sine.inOut",
+  const glassShapes = section.querySelectorAll(".glass");
 
-    repeat: -1,
-    yoyo: true,
-    repeatRefresh: true,
+  const glassAnimations = [];
+
+  glassShapes.forEach((shape) => {
+
+    const animation = gsap.to(shape, {
+      x: gsap.utils.random(-450, 450),
+      y: gsap.utils.random(-250, 250),
+      rotation: gsap.utils.random(-60, 60),
+
+      duration: gsap.utils.random(8, 14),
+      ease: "sine.inOut",
+
+      repeat: -1,
+      yoyo: true,
+      repeatRefresh: true,
+    });
+
+    glassAnimations.push(animation);
   });
-}
 
-const glassAnimations = [];
 
-glassShapes.forEach((shape) => {
-  const animation = animateGlass(shape);
-  glassAnimations.push(animation);
-});
-
-if (document.querySelector(".hero")) {
   ScrollTrigger.create({
-    trigger: ".hero",
+    trigger: section,
+
     start: "top bottom",
     end: "bottom top",
 
@@ -54,7 +57,8 @@ if (document.querySelector(".hero")) {
       glassAnimations.forEach((animation) => animation.pause());
     },
   });
-}
+
+});
 
 
 
@@ -150,7 +154,9 @@ function updateCarousel() {
 
 
 // Position de départ
-updateCarousel();
+if (projectImages.length > 0 && projectTitle) {
+  updateCarousel();
+}
 
 
 // Flèche droite
