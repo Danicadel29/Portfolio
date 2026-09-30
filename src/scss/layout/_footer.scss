@@ -74,3 +74,58 @@
     z-index: 1;
   }
 }
+
+// Tablette
+
+@media (max-width: $breakpoint-tablet) {
+
+  .footer {
+
+    &__name {
+      font-size: $font-size-9xl;
+    }
+
+    &__content {
+      margin: $spacing-lg;
+    }
+  }
+}
+
+// téléphone
+
+@media (max-width: $breakpoint-mobile) {
+
+  .footer {
+
+    &__content {
+      margin: $spacing-base;
+      align-items: center;
+    }
+
+    &__name {
+      font-size: $font-size-6xl;
+    }
+
+    &__list {
+      gap: $spacing-xs;
+    }
+
+    &__link {
+      font-size: $font-size-sm;
+    }
+
+    &__contact {
+      gap: $spacing-xs;
+
+      a,
+      p {
+        font-size: $font-size-sm;
+      }
+    }
+
+    &__copy {
+      font-size: $font-size-xs;
+      margin-top: $spacing-lg;
+    }
+  }
+}

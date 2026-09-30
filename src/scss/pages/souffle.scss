@@ -5,6 +5,9 @@
     overflow: hidden;
     padding-top: $spacing-5xl;
 
+
+    // GLASS
+
     &__glass {
         position: absolute;
         z-index: 5;
@@ -19,7 +22,6 @@
         pointer-events: none;
     }
 
-
     &__glass--one {
         width: 30rem;
         height: 30rem;
@@ -31,7 +33,6 @@
 
         transform: rotate(-25deg);
     }
-
 
     &__glass--two {
         width: 30rem;
@@ -45,48 +46,164 @@
         transform: rotate(20deg);
     }
 
-    .souffle__title {
+
+    // TITRE
+
+    &__title {
         font-family: $font-primary;
         font-size: $font-size-10xl;
         color: $color-secondary;
 
-        margin-bottom: $spacing-3xl;
-        margin-left: $spacing-6xl;
+        width: 85%;
+        max-width: $container-width;
+
+        margin: 0 auto $spacing-3xl;
     }
 
-    .souffle__content {
-        margin-left: $spacing-6xl;
-        display: flex;
-        flex-direction: row;
-        margin-bottom: $spacing-6xl;
 
-        .souffle__soustitle {
-            font-family: $font-primary;
-            font-size: $font-size-6xl;
-            color: $color-secondary;
+    // CONTENU
 
-            margin: 0 0 $spacing-lg;
+    &__content {
+        width: 85%;
+        max-width: $container-width;
+
+        margin: 0 auto $spacing-6xl;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+
+        gap: $spacing-2xl;
+    }
+
+    &__text {
+        width: 100%;
+    }
+
+
+    // SOUS-TITRE
+
+    &__soustitle {
+        font-family: $font-primary;
+        font-size: $font-size-6xl;
+        color: $color-secondary;
+
+        margin: 0 0 $spacing-lg;
+    }
+
+
+    // PARAGRAPHES
+
+    &__paragraphe {
+        font-family: $font-secondary;
+        font-size: $font-size-2xl;
+        color: $color-text;
+
+        margin: 0 0 $spacing-lg;
+    }
+
+
+    // IMAGE
+
+    &__image {
+        width: 100%;
+        max-width: 35rem;
+
+        justify-self: end;
+    }
+
+    &__image--souffle {
+        display: block;
+
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+// Tablette
+
+@media (max-width: $breakpoint-tablet) {
+
+    .souffle {
+        padding: $spacing-3xl $spacing-xl;
+
+        &__glass {
+            display: none;
         }
 
-        .souffle__paragraphe {
-            font-family: $font-secondary;
-            font-size: $font-size-2xl;
-            color: $color-text;
+        &__title {
+            font-size: $font-size-4xl;
 
-            margin: 0;
+            width: 75%;
+            max-width: 37rem;
+
+            margin: 0 auto $spacing-xl;
+            
+            br {
+                display: none;
+            }
+        }
+
+        &__content {
+            display: block;
+
+            width: 75%;
+            max-width: 37rem;
+
+            margin: 0 auto;
+        }
+
+        &__soustitle {
+            font-size: $font-size-3xl;
+
             margin-bottom: $spacing-lg;
         }
+
+        &__paragraphe {
+            font-size: $font-size-lg;
+            line-height: 1.4;
+        }
+
+        &__image {
+            display: none;
+        }
     }
+}
 
-    .souffle__image {
-        width: 200%;
-        margin-right: $spacing-4xl;
-        margin-top: -22rem;
 
-        .souffle__image--souffle {
-            display: block;
-            width: 100%;
-            height: auto;
+// Téléphone
+
+@media (max-width: $breakpoint-mobile) {
+
+    .souffle {
+        padding: $spacing-xl $spacing-base;
+
+        &__title {
+            font-size: $font-size-2xl;
+
+            width: 90%;
+
+            margin: 0 auto $spacing-lg;
+        }
+
+        &__content {
+            width: 90%;
+
+            margin: 0 auto;
+        }
+
+        &__soustitle {
+            font-size: $font-size-xl;
+
+            margin-bottom: $spacing-base;
+        }
+
+        &__paragraphe {
+            font-size: $font-size-sm;
+            line-height: 1.5;
+
+            margin-bottom: $spacing-base;
         }
     }
 }

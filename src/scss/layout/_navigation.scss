@@ -26,3 +26,47 @@
   }
 
 }
+
+// TABLETTE
+
+@media (max-width: $breakpoint-tablet) {
+
+  .navigation {
+    height: 100px;
+    gap: $spacing-4xl;
+
+    &__list {
+      gap: $spacing-3xl;
+    }
+
+    &__item {
+      font-size: $font-size-4xl;
+    }
+  }
+
+}
+
+
+// Téléphone
+
+@media (max-width: $breakpoint-mobile) {
+
+  .navigation {
+    height: 80px;
+    padding: 0 $spacing-base;
+    gap: 0;
+    justify-content: space-between;
+
+    padding-right: $spacing-base;
+    box-sizing: border-box;
+
+    &__list {
+      gap: $spacing-lg;
+    }
+
+    &__item {
+      font-size: $font-size-xl;
+    }
+  }
+
+}

@@ -1,7 +1,6 @@
 @use "../config/variables" as *;
 
-.projects{
-
+.projects {
     position: relative;
     overflow: hidden;
 
@@ -9,6 +8,18 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+
+
+    // Bloc qui contient TOUT le projet
+    &__content {
+        position: relative;
+
+        width: 90%;
+        max-width: $container-width;
+
+        margin: 0 auto;
+    }
+
 
     &__deco {
         position: absolute;
@@ -21,35 +32,43 @@
         z-index: 3;
 
         pointer-events: none;
-        }
-
-        &__deco--pro {
-        top: 4rem;
-        left: 8rem;
-        }
-
-        &__deco--jets {
-        bottom: 11rem;
-        right: 8rem;
     }
+
+
+    &__deco--pro {
+        top: 4rem;
+        left: 0;
+    }
+
+
+    &__deco--jets {
+        bottom: 11rem;
+        right: 0;
+    }
+
 
     &__carousel {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
-            width: 100%;
-            padding: 0 $spacing-xl;
-            padding-top: $spacing-4xl;
-            padding-bottom: $spacing-4xl;
+        width: 100%;
+
+        padding-top: $spacing-4xl;
+        padding-bottom: $spacing-4xl;
     }
+
 
     &__images {
         position: relative;
 
-        width: 62rem;
+        width: 100%;
+        max-width: 62rem;
         height: 23.5rem;
-        }
+
+        flex: 1;
+    }
+
 
     &__image {
         position: absolute;
@@ -71,18 +90,23 @@
         }
     }
 
+
     &__arrow {
         width: 3rem;
         height: 6rem;
 
+        flex-shrink: 0;
+
         background: none;
         border: none;
+
         cursor: pointer;
         position: relative;
 
         &::before,
         &::after {
             content: "";
+
             position: absolute;
             left: 50%;
 
@@ -90,9 +114,11 @@
             height: 2.9rem;
 
             background-color: $color-secondary;
+
             transform-origin: center;
         }
     }
+
 
     &__arrow--left {
 
@@ -107,9 +133,8 @@
         }
     }
 
-    &__arrow--right {
 
-        transform: translateX(-2rem);
+    &__arrow--right {
 
         &::before {
             top: 0.25rem;
@@ -122,6 +147,7 @@
         }
     }
 
+
     &__title {
         position: relative;
 
@@ -131,8 +157,96 @@
 
         margin: 0;
         margin-bottom: $spacing-3xl;
-        margin-left: $spacing-7xl;
 
         z-index: 4;
+    }
+}
+
+
+
+// Tablette
+
+@media (max-width: $breakpoint-tablet) {
+
+    .projects {
+
+        &__deco {
+            display: none;
+        }
+
+        &__carousel {
+            display: block;
+            padding: $spacing-2xl 0;
+        }
+
+        &__images {
+            position: static;
+
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 22rem));
+            justify-content: center;
+
+            width: 100%;
+            height: auto;
+
+            gap: $spacing-xl;
+        }
+
+        &__images a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            width: 100%;
+        }
+
+        &__image {
+            position: static;
+
+            display: block;
+
+            width: 100% !important;
+            max-width: 20rem;
+            height: auto !important;
+
+            transform: none !important;
+            opacity: 1 !important;
+
+            filter: grayscale(100%) !important;
+
+            transition: $transition-base;
+
+            &:hover {
+                filter: grayscale(0%) !important;
+            }
+        }
+
+        &__arrow {
+            display: none;
+        }
+
+        &__title {
+            display: none;
+        }
+    }
+}
+
+// Téléphone
+
+@media (max-width: $breakpoint-mobile) {
+
+    .projects {
+
+        &__images {
+            grid-template-columns: repeat(2, 9rem);
+            justify-content: center;
+
+            gap: $spacing-base;
+        }
+
+        &__image {
+            width: 100% !important;
+            max-width: 9rem;
+        }
     }
 }

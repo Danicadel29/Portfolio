@@ -5,7 +5,7 @@
     overflow: hidden;
     padding-top: $spacing-5xl;
 
-        &__glass {
+    &__glass {
         position: absolute;
         z-index: 5;
 
@@ -19,7 +19,6 @@
         pointer-events: none;
     }
 
-
     &__glass--one {
         width: 30rem;
         height: 30rem;
@@ -32,12 +31,11 @@
         transform: rotate(-25deg);
     }
 
-
     &__glass--two {
         width: 25rem;
         height: 25rem;
 
-        top: 0rem;
+        top: 0;
         left: 10rem;
 
         border-radius: 40% 60% 45% 55% / 55% 40% 60% 45%;
@@ -45,7 +43,7 @@
         transform: rotate(20deg);
     }
 
-    .dataplays__title {
+    &__title {
         font-family: $font-primary;
         font-size: $font-size-10xl;
         color: $color-primary;
@@ -54,38 +52,130 @@
         margin: 0 0 $spacing-3xl;
     }
 
-    .dataplays__content {
+    &__content {
         width: 37rem;
         margin: 0 auto;
-
-        .dataplays__soustitle {
-            font-family: $font-primary;
-            font-size: $font-size-6xl;
-            color: $color-primary;
-
-            margin: 0 0 $spacing-lg;
-        }
-
-        .dataplays__paragraphe {
-            font-family: $font-secondary;
-            font-size: $font-size-2xl;
-            color: $color-text;
-
-            margin: 0;
-            margin-bottom: $spacing-lg;
-        }
     }
 
-    .dataplays__image {
+    &__soustitle {
+        font-family: $font-primary;
+        font-size: $font-size-6xl;
+        color: $color-primary;
+
+        margin: 0 0 $spacing-lg;
+    }
+
+    &__paragraphe {
+        font-family: $font-secondary;
+        font-size: $font-size-2xl;
+        color: $color-text;
+
+        margin: 0;
+        margin-bottom: $spacing-lg;
+    }
+
+    &__image {
         width: 70%;
         margin-left: auto;
         margin-top: -100px;
         margin-bottom: $spacing-3xl;
+    }
 
-        .dataplays__image--titanic {
-            display: block;
-            width: 100%;
-            height: auto;
+    &__image--titanic {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+// Tablette
+
+@media (max-width: $breakpoint-tablet) {
+
+    .dataplays {
+        padding: $spacing-3xl $spacing-xl;
+
+        // On retire les glass
+        &__glass {
+            display: none;
+        }
+
+        &__title {
+            font-size: $font-size-5xl;
+            text-align: left;
+
+            width: 75%;
+            max-width: 37rem;
+
+            margin: 0 auto $spacing-xl;
+
+            br {
+                display: none;
+            }
+        }
+
+        &__content {
+            width: 75%;
+            max-width: 37rem;
+
+            margin: 0 auto;
+        }
+
+        &__soustitle {
+            font-size: $font-size-3xl;
+            text-align: left;
+
+            margin-bottom: $spacing-lg;
+        }
+
+        &__paragraphe {
+            font-size: $font-size-lg;
+            text-align: left;
+            line-height: 1.4;
+        }
+
+        &__image {
+            display: none;
+        }
+    }
+}
+
+
+// Téléphone
+
+@media (max-width: $breakpoint-mobile) {
+
+    .dataplays {
+        padding: $spacing-xl $spacing-base;
+
+        &__title {
+            font-size: $font-size-3xl;
+            text-align: left;
+
+            width: 90%;
+
+            margin: 0 auto $spacing-lg;
+        }
+
+        &__content {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        &__soustitle {
+            font-size: $font-size-xl;
+            text-align: left;
+
+            margin-bottom: $spacing-base;
+        }
+
+        &__paragraphe {
+            font-size: $font-size-sm;
+            text-align: left;
+            line-height: 1.5;
+
+            margin-bottom: $spacing-base;
         }
     }
 }

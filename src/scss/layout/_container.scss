@@ -48,3 +48,84 @@
     max-width: 27rem;
   }
 }
+
+// Tablette
+
+@media (max-width: $breakpoint-tablet) {
+
+  .about {
+    grid-template-columns: 35% 1fr;
+    gap: $spacing-xl;
+    padding: 0 $spacing-xl;
+
+    &__images {
+      gap: $spacing-base;
+    }
+
+    &__image {
+      width: 11rem;
+      height: 11rem;
+    }
+
+    &__title {
+      font-size: $font-size-7xl;
+    }
+
+    &__paragraphe {
+      font-size: $font-size-base;
+    }
+  }
+}
+
+
+// Téléphone
+
+@media (max-width: $breakpoint-mobile) {
+
+  .about {
+    display: flex;
+    flex-direction: column;
+
+    padding: 0 $spacing-base;
+    margin-bottom: $spacing-2xl;
+
+    &__images {
+      flex-direction: row;
+      justify-content: center;
+
+      width: 100%;
+      gap: $spacing-sm;
+
+      margin-top: $spacing-xl;
+
+      rotate: -4deg;
+    }
+
+    &__image {
+      width: 30%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+    }
+
+    &__content {
+      width: 100%;
+      margin-top: $spacing-xl;
+    }
+
+    &__title {
+      font-size: $font-size-6xl;
+      margin-bottom: $spacing-lg;
+    }
+
+    &__paragraphe {
+      font-size: $font-size-base;
+      max-width: 100%;
+    }
+
+    &__paragraphe--second {
+      margin-left: 0;
+      margin-top: $spacing-lg;
+      max-width: 100%;
+    }
+  }
+}
