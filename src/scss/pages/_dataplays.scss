@@ -74,11 +74,34 @@
         margin-bottom: $spacing-lg;
     }
 
+    &__button {
+    display: inline-block;
+    padding: $spacing-base $spacing-xl;
+    z-index: 100;
+
+    background-color: $color-primary;
+    color: $color-white;
+
+    font-family: $font-secondary;
+    font-size: $font-size-lg;
+
+    border-radius: $radius-base;
+    text-decoration: none;
+
+    transition: $transition-base;
+
+    &:hover {
+        background-color: $color-secondary;
+    }
+}
+
     &__image {
         width: 70%;
         margin-left: auto;
         margin-top: -100px;
         margin-bottom: $spacing-3xl;
+
+        pointer-events: none;
     }
 
     &__image--titanic {
@@ -135,6 +158,11 @@
             line-height: 1.4;
         }
 
+        &__button {
+            padding: $spacing-sm $spacing-lg;
+            font-size: $font-size-base;
+        }
+
         &__image {
             display: none;
         }
@@ -176,6 +204,11 @@
             line-height: 1.5;
 
             margin-bottom: $spacing-base;
+        }
+
+        &__button {
+            padding: $spacing-sm $spacing-base;
+            font-size: $font-size-sm;
         }
     }
 }

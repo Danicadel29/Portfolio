@@ -25,6 +25,16 @@
     
   }
 
+  &__logo {
+    display: inline-block;
+    margin-left: $spacing-2xl;
+    transition: transform 0.8s ease;
+
+    &:hover {
+        transform: rotate(360deg);
+    }
+}
+
 }
 
 // TABLETTE

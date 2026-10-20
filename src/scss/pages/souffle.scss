@@ -102,6 +102,26 @@
         margin: 0 0 $spacing-lg;
     }
 
+    &__button {
+    display: inline-block;
+    padding: $spacing-base $spacing-xl;
+
+    background-color: $color-primary;
+    color: $color-white;
+
+    font-family: $font-secondary;
+    font-size: $font-size-lg;
+
+    border-radius: $radius-base;
+    text-decoration: none;
+
+    transition: $transition-base;
+
+    &:hover {
+        background-color: $color-secondary;
+    }
+}
+
 
     // IMAGE
 
@@ -165,6 +185,11 @@
             line-height: 1.4;
         }
 
+        &__button {
+            padding: $spacing-sm $spacing-lg;
+            font-size: $font-size-base;
+        }
+
         &__image {
             display: none;
         }
@@ -204,6 +229,11 @@
             line-height: 1.5;
 
             margin-bottom: $spacing-base;
+        }
+
+        &__button {
+            padding: $spacing-sm $spacing-base;
+            font-size: $font-size-sm;
         }
     }
 }

@@ -265,3 +265,21 @@ window.addEventListener("resize", () => {
   }
 
 });
+
+// Animation des textes au scroll
+
+gsap.utils.toArray("h2, h3, p").forEach((text) => {
+
+    gsap.from(text, {
+        opacity: 0,
+        y: 30,
+        duration: 1,
+
+        scrollTrigger: {
+            trigger: text,
+            start: "top 90%",
+            once: true
+        }
+    });
+
+});
