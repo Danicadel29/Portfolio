@@ -283,3 +283,133 @@ gsap.utils.toArray("h2, h3, p").forEach((text) => {
     });
 
 });
+
+
+// Loading entre les pages
+
+const loader = document.querySelector(".loader");
+const logo = loader?.querySelector("img");
+
+if (loader && logo) {
+
+    // Animation du logo
+    const animerLogo = async (image) => {
+
+        const response = await fetch(image.src);
+        if (!response.ok) throw new Error("Logo introuvable");
+
+        const code = await response.text();
+        const parent = image.parentElement;
+
+        image.outerHTML = code;
+
+        const svg = parent.querySelector("svg");
+        if (!svg) throw new Error("SVG introuvable");
+
+        const petales = gsap.utils.toArray(
+            svg.querySelectorAll("circle")
+        ).slice(0, 7);
+
+        gsap.set(svg, {
+            width: 120,
+            height: 120,
+            overflow: "visible"
+        });
+
+        // Rotation et mouvement des pétales
+        gsap.timeline({ repeat: -1 })
+            .to(petales, {
+                x: i => (Number(petales[i].getAttribute("cx")) - 30.5) * 0.6,
+                y: i => (Number(petales[i].getAttribute("cy")) - 30.5) * 0.6,
+                duration: 0.6,
+                ease: "power2.out"
+            })
+            .to(petales, {
+                x: 0,
+                y: 0,
+                duration: 0.6,
+                ease: "back.out(2)"
+            });
+
+        // Rotation continue du logo
+        gsap.to(svg, {
+            rotation: "+=360",
+            duration: 1.2,
+            repeat: -1,
+            ease: "none"
+        });
+    };
+
+    // Attendre le chargement de la page
+    const chargementPage = new Promise(resolve => {
+        if (document.readyState === "complete") {
+            resolve();
+        } else {
+            window.addEventListener("load", resolve, { once: true });
+        }
+    });
+
+    // Afficher la page quand tout est prêt
+    Promise.all([
+        animerLogo(logo),
+        chargementPage,
+        document.fonts.ready
+    ]).then(() => {
+
+        gsap.to(loader, {
+            autoAlpha: 0,
+            duration: 0.6,
+            ease: "power2.inOut",
+            onComplete: () => loader.remove()
+        });
+
+    }).catch(error => {
+        console.error(error);
+        loader.remove();
+    });
+
+    // Changement de page
+    document.querySelectorAll('a[href^="./"]').forEach(link => {
+
+        link.addEventListener("click", async event => {
+
+            if (event.ctrlKey || event.metaKey ||
+                event.shiftKey || event.altKey ||
+                link.target === "_blank") return;
+
+            event.preventDefault();
+
+            // Créer un nouveau loader
+            const nouveauLoader = document.createElement("div");
+            nouveauLoader.className = "loader";
+
+            nouveauLoader.innerHTML = `
+                <img src="./src/assets/images/Logo.svg" alt="Chargement">
+            `;
+
+            document.body.appendChild(nouveauLoader);
+
+            try {
+                // Préparer l'animation du logo
+                await animerLogo(nouveauLoader.querySelector("img"));
+            } catch (error) {
+                console.error(error);
+            }
+
+            // Transition vers la nouvelle page
+            gsap.fromTo(nouveauLoader,
+                { autoAlpha: 0 },
+                {
+                    autoAlpha: 1,
+                    duration: 0.5,
+                    ease: "power2.inOut",
+                    onComplete: () => {
+                        window.location.href = link.href;
+                    }
+                }
+            );
+
+        });
+
+    });
+}

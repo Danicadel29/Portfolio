@@ -23,3 +23,16 @@ p {
 .bande-deco {
   width: 100%;
 }
+
+.loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #FEFEF2;
+    display: grid;
+    place-items: center;
+
+    img {
+        width: 120px;
+    }
+}
