@@ -384,7 +384,7 @@ if (loader && logo) {
             nouveauLoader.className = "loader";
 
             nouveauLoader.innerHTML = `
-                <img src="./src/assets/images/Logo.svg" alt="Chargement">
+                <img src="/public/Logo.svg" alt="Chargement">
             `;
 
             document.body.appendChild(nouveauLoader);
